@@ -79,7 +79,7 @@
 3. Click on "Add source"
 4. In the "Add file source" dialog, click `<None>` and enter exactly:
    ```
-   https://mhdzumair.github.io/MediaFusion
+   https://beo-clmm.github.io/MediaFusion
    ```
 5. In the "Enter a name for this media source" field, enter `MediaFusion` and click "OK"
 6. Go back to Kodi home screen
