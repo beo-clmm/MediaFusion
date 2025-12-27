@@ -128,7 +128,7 @@ def list_catalog(params):
 
     process_videos(videos, "list_catalog", params["catalog_type"], params["catalog_id"])
 
-    if len(videos) >= 25:
+    if len(videos) >= 5000:
         next_url = build_url(
             "list_catalog",
             catalog_type=params["catalog_type"],

@@ -117,7 +117,7 @@ class CatalogBaseQueryBuilder(ABC, Generic[B]):
             )
         return self
 
-    def add_pagination(self, skip: int = 0, limit: int = 25) -> B:
+    def add_pagination(self, skip: int = 0, limit: int = 5000) -> B:
         """Add pagination"""
         self.base_query = self.base_query.offset(skip).limit(limit)
         return self
@@ -267,7 +267,7 @@ async def get_catalog_meta_list(
     catalog_id: str,
     user_data: UserData,
     skip: int = 0,
-    limit: int = 25,
+    limit: int = 5000,
     genre: Optional[str] = None,
     namespace: Optional[str] = None,
     is_watchlist_catalog: bool = False,
