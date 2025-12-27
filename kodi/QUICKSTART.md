@@ -1,5 +1,20 @@
 # Quick Start: Enabling Kodi Add-on Distribution
 
+## ⚠️ Important: First-Time Setup
+
+If you've already created a release (e.g., 4.3.35) but the `gh-pages` branch doesn't exist yet:
+
+1. **First, manually trigger the deployment**:
+   - Go to **Actions** → **Deploy to GitHub Pages**
+   - Click **Run workflow** → Click the green **Run workflow** button
+   - Wait for it to complete (1-2 minutes)
+
+2. **Then, configure GitHub Pages** (see Step 1 below)
+
+This is only needed once. Future releases will automatically deploy.
+
+---
+
 ## What You Need to Do
 
 This repository is already configured to build and distribute MediaFusion as a Kodi add-on. To make it available to users, you need to enable GitHub Pages.
@@ -73,6 +88,9 @@ After enabling GitHub Pages, verify it's working:
 - Wait a few minutes after enabling (initial deployment takes time)
 - Check the **Actions** tab for workflow status
 - Ensure the `gh-pages` branch exists
+- If no `gh-pages` branch exists, you can manually trigger the deployment:
+  1. Go to **Actions** → **Deploy to GitHub Pages**
+  2. Click **Run workflow** to manually deploy
 
 ### URLs point to wrong location
 - The URLs have been updated to `beo-clmm.github.io`
@@ -82,6 +100,21 @@ After enabling GitHub Pages, verify it's working:
 - Ensure you've created a release (not just a tag)
 - Check the **Actions** tab for workflow status
 - The workflow only runs on release creation
+- For existing releases, use the manual deployment workflow (see above)
+
+## Manual Deployment
+
+If you need to deploy to GitHub Pages without creating a new release:
+
+1. Go to **Actions** → **Deploy to GitHub Pages**
+2. Click **Run workflow**
+3. Click the green **Run workflow** button
+4. Wait for completion (1-2 minutes)
+
+This is useful for:
+- Redeploying after making changes to the Kodi addon
+- Initial setup if the automatic workflow didn't run
+- Fixing deployment issues
 
 ## Technical Details
 
@@ -93,4 +126,5 @@ If you encounter issues:
 1. Check the **Actions** tab for workflow errors
 2. Verify GitHub Pages is enabled and set to `gh-pages` branch
 3. Ensure you've created at least one release
-4. Review the [PACKAGING.md](./PACKAGING.md) documentation
+4. Try the manual deployment workflow if automatic deployment failed
+5. Review the [PACKAGING.md](./PACKAGING.md) documentation
