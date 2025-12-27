@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write  # Needed to push to gh-pages branch
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
