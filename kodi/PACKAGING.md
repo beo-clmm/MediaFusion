@@ -150,6 +150,24 @@ The version number is defined in:
 
 Both should be kept in sync and updated before creating a release.
 
+### How to Update Versions
+
+1. Edit both `addon.xml` files to update the version attribute:
+   ```xml
+   <addon id="plugin.video.mediafusion" version="X.X.X" ...>
+   ```
+2. Commit the changes
+3. Create a git tag matching the version: `git tag X.X.X`
+4. Create a GitHub release using that tag
+5. The CI workflow will build and deploy with the new version
+
+### What Happens if Versions Get Out of Sync
+
+- If repository version doesn't match plugin version, users may see inconsistent version numbers
+- Kodi will still function, but updates may not be detected properly
+- The CI/CD workflow uses the version from `addon.xml` to name the zip files
+- Keep versions synchronized to avoid confusion and ensure proper update detection
+
 ## Troubleshooting
 
 ### Build fails with missing dependencies

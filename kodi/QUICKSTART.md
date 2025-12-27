@@ -64,8 +64,8 @@ After enabling GitHub Pages, verify it's working:
    - You should see a page with download links
 2. Check: `https://beo-clmm.github.io/MediaFusion/addons.xml`
    - You should see XML content with repository and plugin info
-3. Check: `https://beo-clmm.github.io/MediaFusion/repository.mediafusion-4.3.35.zip`
-   - Should download the repository zip file
+3. Check: `https://beo-clmm.github.io/MediaFusion/repository.mediafusion-X.X.X.zip`
+   - Should download the repository zip file (replace X.X.X with actual version)
 
 ## Troubleshooting
 
