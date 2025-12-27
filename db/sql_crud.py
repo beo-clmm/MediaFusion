@@ -304,7 +304,7 @@ async def get_mdblist_meta_list(
     catalog_type: str,
     genre: Optional[str] = None,
     skip: int = 0,
-    limit: int = 50,
+    limit: int = 5000,
 ) -> List[public_schemas.Meta]:
     """Get a list of metadata entries from MDBList
     
@@ -443,7 +443,7 @@ async def search_metadata(
     search_query: str,
     user_data: UserData,
     namespace: Optional[str] = None,
-    limit: int = 50,
+    limit: int = 5000,
 ) -> public_schemas.Metas:
     """Search metadata with efficient filtering and ranking"""
     query = (
@@ -2018,7 +2018,7 @@ async def process_search_query(
     search_query: str,
     catalog_type: MediaType,
     user_data: UserData,
-    limit: int = 50,
+    limit: int = 5000,
 ) -> public_schemas.Metas:
     """Search for metadata using PostgreSQL full-text search"""
     return await search_metadata(
@@ -2030,7 +2030,7 @@ async def process_tv_search_query(
     session: AsyncSession,
     search_query: str,
     namespace: str,
-    limit: int = 50,
+    limit: int = 5000,
 ) -> public_schemas.Metas:
     """Search for TV channels using PostgreSQL full-text search"""
     user_data = UserData()  # Default user data for TV search
@@ -2869,7 +2869,7 @@ async def save_events_data(
     return meta_id
 
 
-async def get_events_meta_list(session: AsyncSession, genre: str = None, skip: int = 0, limit: int = 50) -> List:
+async def get_events_meta_list(session: AsyncSession, genre: str = None, skip: int = 0, limit: int = 5000) -> List:
     """Get list of events metadata"""
     from scrapers.dlhd import dlhd_schedule_service
     
