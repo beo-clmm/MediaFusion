@@ -18,6 +18,9 @@ from .utils import (
     is_elementum_installed_and_enabled,
 )
 
+# Pagination limit - must match the limit used in the backend API
+PAGINATION_LIMIT = 5000
+
 
 def list_categories():
     manifest_data = fetch_data(parse.urljoin(BASE_URL, f"/{SECRET_STR}/manifest.json"))
@@ -128,7 +131,7 @@ def list_catalog(params):
 
     process_videos(videos, "list_catalog", params["catalog_type"], params["catalog_id"])
 
-    if len(videos) >= 5000:
+    if len(videos) >= PAGINATION_LIMIT:
         next_url = build_url(
             "list_catalog",
             catalog_type=params["catalog_type"],
