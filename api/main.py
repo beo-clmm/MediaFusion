@@ -421,7 +421,7 @@ async def get_catalog(
                     catalog_type=catalog_type.value,
                     genre=genre,
                     skip=skip,
-                    limit=5000,
+                    limit=50000,
                 )
                 metas = public_schemas.Metas(metas=meta_list)
                 # Cache result if applicable
